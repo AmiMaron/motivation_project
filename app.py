@@ -145,7 +145,15 @@ class AssistantManager:
 
         st.success(f"User profile for {user_name} has been created and saved.")
         self.user_profile = user_data
-
+    
+    def load_user_profile(self, user_name):
+        profile_path = f"users/{user_name}/{user_name}_profile.json"
+        if os.path.exists(profile_path):
+            with open(profile_path, 'r') as f:
+                self.user_profile = json.load(f)
+            return True
+        return False
+    
 def main():
     st.title("MotivateBot Chat")
 

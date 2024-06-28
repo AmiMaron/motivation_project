@@ -66,7 +66,6 @@ class AssistantManager:
         
         return self.get_assistant_response(summary_run.id, summary_thread.id)
         
-      
     def save_conversation_log(self, user_name, thread_date):        
         log_data = {
             "thread_name": f"{user_name}_{thread_date.replace(' ', '_')}",
