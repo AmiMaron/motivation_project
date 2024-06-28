@@ -1,0 +1,15 @@
+{
+  "user_name": "sd",
+  "personal_info": {
+    "name": "ami",
+    "date_of_birth": "may 5 1997",
+    "gender": "male",
+    "email": "ami@gmai.com",
+    "phone": "0909",
+    "profession": "student",
+    "address": {
+      "city": "jeru",
+      "country": "isra"
+    }
+  }
+}

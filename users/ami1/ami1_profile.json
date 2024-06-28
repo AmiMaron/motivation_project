@@ -1,0 +1,15 @@
+{
+  "user_name": "ami1",
+  "personal_info": {
+    "name": "ami maron",
+    "date_of_birth": "5.5.1997",
+    "gender": "male",
+    "email": "aaa",
+    "phone": "df",
+    "profession": "f",
+    "address": {
+      "city": "",
+      "country": "f"
+    }
+  }
+}

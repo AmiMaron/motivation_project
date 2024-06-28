@@ -1,0 +1,15 @@
+{
+  "user_name": "kkk",
+  "personal_info": {
+    "name": "",
+    "date_of_birth": "",
+    "gender": "",
+    "email": "",
+    "phone": "",
+    "profession": "",
+    "address": {
+      "city": "",
+      "country": ""
+    }
+  }
+}

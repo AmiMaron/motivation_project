@@ -1,0 +1,13 @@
+{
+  "thread_name": "ami_trial_2024-06-27_19:24:32",
+  "thread_id": "thread_Ko0wxcrtjVTsvVEGdBvWfyZI",
+  "assistant_id": "asst_VxB5X5MnbE1udKNdgOI2HzbQ",
+  "thread_date": "2024-06-27 19:24:32",
+  "thread_summary": "Summary: The conversation involved an assistant greeting someone named Ami Maron and asking how they were doing.",
+  "conversation": [
+    {
+      "role": "assistant",
+      "content": "Hello Ami Maron! How are you doing today?"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "thread_name": "ami_trial_2024-06-27_18:10:07",
+  "thread_id": "thread_2iHJkYbZMJEQqulybMu5L3if",
+  "assistant_id": "asst_VxB5X5MnbE1udKNdgOI2HzbQ",
+  "thread_date": "2024-06-27 18:10:07",
+  "thread_summary": "The assistant greeted Ami and acknowledged her ambitious goals, offering assistance with achieving them or with any other concerns.",
+  "conversation": [
+    {
+      "role": "assistant",
+      "content": "Hello Ami! How are you today? I see that you have some ambitious goals lined up, like completing your final year project and developing a consistent study routine. How can I assist you today with your goals or anything else on your mind?"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "thread_name": "ami_trial_2024-06-27_18:23:30",
+  "thread_id": "thread_L2Y7DFtFpkZvB5d16NC3l2zu",
+  "assistant_id": "asst_VxB5X5MnbE1udKNdgOI2HzbQ",
+  "thread_date": "2024-06-27 18:23:30",
+  "thread_summary": "The assistant checked in with Ami about discussing goals, routines, or preferences, but Ami accidentally typed \"bb\" prompting the assistant to inquire further.",
+  "conversation": [
+    {
+      "role": "assistant",
+      "content": "Hello Ami! How are you doing today? Is there anything specific you would like to discuss or any updates you would like to share regarding your goals, routines, or preferences?"
+    },
+    {
+      "role": "user",
+      "content": "bb"
+    },
+    {
+      "role": "assistant",
+      "content": "It seems like you might have typed \"bb\" by mistake! Is there anything else you would like to discuss or ask about? Feel free to share any updates or questions you have regarding your goals or preferences."
+    }
+  ]
+}

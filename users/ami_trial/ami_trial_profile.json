@@ -1,0 +1,44 @@
+{
+    "user_name": "ami_trial",
+    "personal_info": {
+        "name": "ami maron",
+        "date_of_birth": "1997-05-05",
+        "gender": "male",
+        "email": "ami.maron@email.org",
+        "phone": "1234567890",
+        "profession": "student",
+        "address": {
+            "city": "jerusalem",
+            "country": "israel"
+        }
+    },
+    "initial_setup": {
+        "goals": [
+            {
+                "goal_id": "unique_goal_identifier_1",
+                "description": "Complete final year project",
+                "category": "academic",
+                "deadline": "2024-12-31",
+                "priority": "high"
+            },
+            {
+                "goal_id": "unique_goal_identifier_2",
+                "description": "Develop a consistent study routine",
+                "category": "personal development",
+                "deadline": "2024-08-01",
+                "priority": "medium"
+            }
+        ],
+        "preferences": {
+            "motivation_techniques": ["Pomodoro Technique", "Reward System"],
+            "interaction_frequency": "daily",
+            "preferred_time_of_interaction": "morning",
+            "communication_channel": "app_notification"
+        },
+        "daily_routine": {
+            "wake_up_time": "07:00",
+            "sleep_time": "23:00",
+            "work_hours": "09:00 - 17:00"
+        }
+    }
+}
