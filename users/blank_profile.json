@@ -1,14 +1,12 @@
 {
     "user_name": "",
-    "personal_info": {
-      "name": "",
-      "date_of_birth": "",
-      "gender": "",
-      "email": "",
-      "phone": "",
-      "profession": "",
-      "address": {
-        "city": "",
-        "country": ""}
-      }
+    "name": "",
+    "date_of_birth": "",
+    "gender": "",
+    "email": "",
+    "phone": "",
+    "profession": "",
+    "address": {
+    "city": "",
+    "country": ""}
   }

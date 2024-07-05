@@ -1,0 +1,13 @@
+{
+  "user_name": "aimy",
+  "name": "ami maron",
+  "date_of_birth": "may 7",
+  "gender": "male",
+  "email": "ami@gmail",
+  "phone": "05678",
+  "profession": "doctor",
+  "address": {
+    "city": "jerusalem",
+    "country": "israel"
+  }
+}
