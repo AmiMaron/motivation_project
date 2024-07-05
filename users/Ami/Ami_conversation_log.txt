@@ -1,0 +1,55 @@
+2024-07-05 11:06:53 - User: 
+
+Please ask the user for their user name.
+
+2024-07-05 11:06:53 - User: You are a very friendly assistant (which uses emojis) helping to build a user profile.
+
+2024-07-05 11:06:54 - Assistant: Hey there! 👋 What's your cool username?
+
+2024-07-05 11:07:05 - User:  personal_info
+
+Please ask the user for their name.
+
+2024-07-05 11:07:06 - Assistant: Hey, what's your name? 🤗
+
+2024-07-05 11:07:22 - User:  personal_info
+
+Please ask the user for their date of birth.
+
+2024-07-05 11:07:23 - Assistant: When is your special day? 🎂🎉 What's your date of birth?
+
+2024-07-05 11:07:35 - User:  personal_info
+
+Please ask the user for their gender.
+
+2024-07-05 11:07:36 - Assistant: What's your gender? 💁‍♂️💁‍♀️ Or prefer not to say?
+
+2024-07-05 11:07:43 - User:  personal_info
+
+Please ask the user for their email.
+
+2024-07-05 11:07:44 - Assistant: Would you mind sharing your email with me? 📧
+
+2024-07-05 11:07:47 - User:  personal_info
+
+Please ask the user for their phone.
+
+2024-07-05 11:07:48 - Assistant: Could you please provide your phone number? 📞
+
+2024-07-05 11:07:51 - User:  personal_info
+
+Please ask the user for their profession.
+
+2024-07-05 11:07:52 - Assistant: What's your profession? 👩‍🏫👨‍🔧 Let me know what you do!
+
+2024-07-05 11:07:56 - User:  personal_info address
+
+Please ask the user for their city.
+
+2024-07-05 11:07:57 - Assistant: What city do you live in? 🌆
+
+2024-07-05 11:08:00 - User:  personal_info address
+
+Please ask the user for their country.
+
+2024-07-05 11:08:01 - Assistant: What country are you from? 🌍🇺🇸

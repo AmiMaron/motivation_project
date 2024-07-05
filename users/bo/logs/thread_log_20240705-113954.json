@@ -1,0 +1,17 @@
+{
+  "thread_name": "bo_2024-07-05_11:39:15",
+  "thread_id": "thread_AoR0WxTCc4TCsV8e7jJmHgI5",
+  "assistant_id": "asst_VxB5X5MnbE1udKNdgOI2HzbQ",
+  "thread_date": "2024-07-05 11:39:15",
+  "thread_summary": "Summary: The assistant greeted Bozi and offered help, to which Bozi replied that they were good.",
+  "conversation": [
+    {
+      "role": "assistant",
+      "content": "Hello Bozi! How can I assist you today?"
+    },
+    {
+      "role": "user",
+      "content": "I'm good thanks"
+    }
+  ]
+}

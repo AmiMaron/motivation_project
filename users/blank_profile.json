@@ -1,44 +1,14 @@
 {
     "user_name": "",
     "personal_info": {
-        "name": "",
-        "date_of_birth": "",
-        "gender": "",
-        "email": "",
-        "phone": "",
-        "profession": "",
-        "address": {
-            "city": "",
-            "country": ""
-        }
-    },
-    "initial_setup": {
-        "goals": [
-            {
-                "goal_id": "",
-                "description": "",
-                "category": "",
-                "deadline": "",
-                "priority": ""
-            },
-            {
-                "goal_id": "",
-                "description": "",
-                "category": "",
-                "deadline": "",
-                "priority": ""
-            }
-        ],
-        "preferences": {
-            "motivation_techniques": [""],
-            "interaction_frequency": "",
-            "preferred_time_of_interaction": "",
-            "communication_channel": ""
-        },
-        "daily_routine": {
-            "wake_up_time": "",
-            "sleep_time": "",
-            "work_hours": ""
-        }
-    }
-}
+      "name": "",
+      "date_of_birth": "",
+      "gender": "",
+      "email": "",
+      "phone": "",
+      "profession": "",
+      "address": {
+        "city": "",
+        "country": ""}
+      }
+  }
