@@ -21,10 +21,6 @@ class AssistantManager:
         self.user_profile = None
 
         # other assistant variables
-        self.method_1 = "TO BE IMPLEMENTED"
-        self.method_2 = "TO BE IMPLEMENTED"
-        self.method_3 = "TO BE IMPLEMENTED"
-
         self.chat_thread = None
         self.thread_id = None
         self.chat_log = []
@@ -118,18 +114,29 @@ class AssistantManager:
     # main chat with user
     def chat_with_user(self, user_input):
         try:
-            self.chat_thread = self.client.beta.threads.create()
+            if self.chat_thread is None:
+                self.chat_thread = self.client.beta.threads.create()
+        
+            # Append user input to chat log
+            self.chat_log.append({"role": "user", "content": user_input})
+
+            consultance_input = self.get_advice(self.chat_log)
+
             self.client.beta.threads.messages.create(
                 thread_id=self.chat_thread.id,
                 role="user",
-                content=user_input
+                content=f"""user_input: {user_input}, consultance input: {consultance_input}"""
             )
-            
             chat_run = self.client.beta.threads.runs.create(
                 thread_id=self.chat_thread.id,
                 assistant_id=self.main_assistant_id
             )
             
+            # FOR DEBUG - REMOVE LATER
+            # print the last content of the thread
+            messages = self.client.beta.threads.messages.list(thread_id=self.chat_thread.id)
+            print(messages.data[-1].content[0].text.value)
+
             # Wait for chat run to complete
             while True:
                 chat_run = self.client.beta.threads.runs.retrieve(
@@ -144,11 +151,83 @@ class AssistantManager:
             chat_messages = self.client.beta.threads.messages.list(thread_id=self.chat_thread.id)
             chat_response = chat_messages.data[0].content[0].text.value
             
+            # Append assistant response to chat log
+            self.chat_log.append({"role": "assistant", "content": chat_response})
+
             return chat_response
         
         except Exception as e:
-            return f"An error occurred: {str(e)}"    
-    
+            error_message = f"An error occurred: {str(e)}"
+            self.chat_log.append({"role": "system", "content": error_message})
+            return error_message  
+        
+    # getting advice from the advisors
+    def get_advice(self, chat_log):
+        # consultance with methods
+        method_chooser = self.client.chat.completions.create(
+        model="gpt-4o",
+        messages=[
+            {"role": "system", "content": """You consult to the main motivation bot. Your role is to understand which method is the best to use for the user's needs. You have one of the methods to choose from: 
+             'method_1' - Framing tasks in terms of their importance for larger goals (“remember, you want to do well on this test so you can…” [live a good life /be an awesome programmer / become a doctor / …])
+             'method_2' - Framing tasks in terms of social connection (“Your mother will be proud of you” “your boss counts on you” “your clients need your help”)
+             'method_3' - Making the future present (“In five years, when you look at yourself, do you want to be the person who did this today")
+             'None' - No method is currently suitable for the user's needs. 
+             Return ONLY one of the following options: 'method_1', 'method_2', 'method_3' or 'None'."""},
+            {"role": "user", "content": f"{chat_log}"}
+        ]
+        )
+
+        # FOR DEBUG - REMOVE LATER
+        print("THE CHOICE:", method_chooser.choices[0].message.content)
+
+        def method_1(chat_log):
+            method_1 = self.client.chat.completions.create(
+            model="gpt-4o",
+            messages=[
+                {"role": "system", "content": """You are a consultant to the main motivation bot. 
+                Your role is to consult based on the following method:
+                frame tasks in terms of their importance for larger goals (“remember, you want to do well on this test so you can…” [live a good life /be an awesome programmer / become a doctor / …])
+                """},
+                {"role": "user", "content": f"{chat_log}"}
+            ]
+            )
+            return method_1.choices[0].message.content
+        
+        def method_2(chat_log):
+            method_2 = self.client.chat.completions.create(
+            model="gpt-4o",
+            messages=[
+                {"role": "system", "content": """You are a consultant to the main motivation bot. 
+                Your role is to consult based on the following method: 
+                frame tasks in terms of social connection (“Your mother will be proud of you” “your boss counts on you” “your clients need your help”)
+                """},
+                {"role": "user", "content": f"{chat_log}"}
+            ]
+            )
+            return method_2.choices[0].message.content
+        
+        def method_3(chat_log):
+            method_3 = self.client.chat.completions.create(
+            model="gpt-4o",
+            messages=[
+                {"role": "system", "content": """You are a consultant to the main motivation bot. 
+                Your role is to consult based on the following method: 
+                make the future present (“In five years, when you look at yourself, do you want to be the person who did this today)
+                """},
+                {"role": "user", "content": f"{chat_log}"}
+            ]
+            )
+            return method_3.choices[0].message.content
+        
+        if "method_1" in method_chooser.choices[0].message.content:
+            return method_1(chat_log)
+        elif "method_2" in method_chooser.choices[0].message.content:
+            return method_2(chat_log)
+        elif "method_3" in method_chooser.choices[0].message.content:
+            return method_3(chat_log)
+        else:
+            return "None"
+
     # save chat log
     def save_chat_log(self, user_name, thread_date):
         log_data = {
@@ -156,7 +235,7 @@ class AssistantManager:
             "thread_id": self.chat_thread.id,
             "assistant_id": self.main_assistant_id,
             "thread_date": thread_date,
-            "chat": self.chat_log[:-1] # add: "thread_summary": self.thread_summary()
+            "chat": self.chat_log
         }
         log_filename = f"Users/{user_name}/logs/thread_log_{time.strftime('%Y%m%d-%H%M%S')}.json"
         os.makedirs(os.path.dirname(log_filename), exist_ok=True)
@@ -166,7 +245,8 @@ class AssistantManager:
 
 def main():
     manager = AssistantManager() # Initialize the assistant manager
-    
+    # provide instructions to the "manager" assistant
+
     # Check if the user has a profile, if not, create one
     user_name = input("Please enter your user name: ")
     if manager.load_user_profile(user_name):

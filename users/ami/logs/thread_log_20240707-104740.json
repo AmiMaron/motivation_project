@@ -1,0 +1,36 @@
+{
+  "thread_name": "ami_2024-07-07_10:45:34",
+  "thread_id": "thread_wOfumwQwyrIKsVPqD3ddil6s",
+  "assistant_id": "asst_VxB5X5MnbE1udKNdgOI2HzbQ",
+  "thread_date": "2024-07-07 10:45:34",
+  "chat": [
+    {
+      "role": "user",
+      "content": "hi"
+    },
+    {
+      "role": "assistant",
+      "content": "Hello! How can I help you today?"
+    },
+    {
+      "role": "user",
+      "content": "what is my email address ive set?"
+    },
+    {
+      "role": "assistant",
+      "content": "I'm sorry, but I don't have access to your personal information like your email address. Is there anything else I can help you with?"
+    },
+    {
+      "role": "user",
+      "content": "cnat u read my profile"
+    },
+    {
+      "role": "assistant",
+      "content": "I'm here to provide support and motivation for you! If you'd like to share your goals or any challenges you're facing, I'm here to help you create a plan to achieve them. Remember, a positive mindset and a clear plan can help you reach your goals! Feel free to share with me what you'd like to work on."
+    },
+    {
+      "role": "user",
+      "content": "i have a problem with getting my self to workout"
+    }
+  ]
+}
