@@ -1,12 +1,18 @@
 {
     "user_name": "",
-    "name": "",
-    "date_of_birth": "",
-    "gender": "",
-    "email": "",
-    "phone": "",
-    "profession": "",
-    "address": {
-    "city": "",
-    "country": ""}
+    "personal_info":
+        {"name": "",
+        "date_of_birth": "",
+        "gender": "",
+        "email": "",
+        "phone": "",
+        "profession": "",
+        "address": {
+        "city": "",
+        "country": ""}
+        },
+    "status":
+        {"summary": "",
+        "last_updated": ""
+        }  
   }

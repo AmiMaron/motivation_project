@@ -42,15 +42,15 @@ class AssistantManager:
             with open(self.blank_profile_path, 'r') as json_file:
                 data = json.load(json_file)
 
-            # Initialize the assistant
+            # Initialize the assistant with the user's name
             self.client.beta.threads.messages.create(
                 thread_id=profile_thread.id,
                 role="user",
-                content="You are a very friendly assistant (which uses emojis) helping to build a user profile. Ask one question at a time and wait for the user's response before moving to the next question."
+                content=f"You are a very friendly assistant (which uses emojis) helping to build a user profile for {user_name}. Ask one question at a time and wait for the user's response before moving to the next question. Focus only on personal information. Always refer to the user as {user_name}."
             )
 
-            def ask_question(key, value, context=""):
-                instruction = f"{context}\n\nPlease ask the user for their {key.replace('_', ' ')}."
+            def ask_question(key):
+                instruction = f"\n\nPlease ask {user_name} for their {key.replace('_', ' ')}."
                 self.client.beta.threads.messages.create(
                     thread_id=profile_thread.id,
                     role="user",
@@ -83,30 +83,34 @@ class AssistantManager:
                 self.client.beta.threads.messages.create(
                     thread_id=profile_thread.id,
                     role="user",
-                    content=f"User's response for {key}: {user_response}"
+                    content=f"{user_name}'s response for {key}: {user_response}"
                 )
                 return user_response
 
-            def populate_dict(data, context=""):
-                for key, value in data.items():
+            def populate_personal_info(personal_info):
+                for key, value in personal_info.items():
                     if isinstance(value, dict):
-                        populate_dict(value, context=f"{context} {key}")
-                    else:
-                        if key != "user_name":
-                            data[key] = ask_question(key, value, context=context)
+                        populate_personal_info(value)
+                    else: 
+                        personal_info[key] = ask_question(key)
 
-            populate_dict(data)
 
+            # Populate the rest of the personal_info
+            populate_personal_info(data["personal_info"])
+
+            # Set other parts of the profile
             data["user_name"] = user_name
+            data["status"]["last_updated"] = datetime.datetime.now().isoformat()
+            data["status"]["summary"] = "Personal information collected"
 
-            new_user_profile = f"Users/{user_name}/{user_name}_profile.json"
+            new_user_profile = f"users/{user_name}/{user_name}_profile.json"
             os.makedirs(os.path.dirname(new_user_profile), exist_ok=True)
             with open(new_user_profile, 'w') as f:
                 json.dump(data, f, indent=2)
 
             self.user_profile = data
             
-            return "User profile built successfully"
+            return "User personal information collected successfully"
         
         except Exception as e:
             return f"An error occurred while building the user profile: {str(e)}"
