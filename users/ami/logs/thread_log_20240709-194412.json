@@ -1,0 +1,16 @@
+{
+  "thread_name": "ami_2024-07-09_19:44:00",
+  "thread_id": "thread_z7N1ZiT7dnp05rSJhWFbXh2B",
+  "assistant_id": "asst_VxB5X5MnbE1udKNdgOI2HzbQ",
+  "thread_date": "2024-07-09 19:44:00",
+  "chat": [
+    {
+      "role": "user",
+      "content": "hi"
+    },
+    {
+      "role": "assistant",
+      "content": "Hello! I'm here to support you in achieving your goals. Whether you're working towards personal growth, career advancement, or any other aspiration, I'm here to help. Feel free to share your goals or any challenges you're facing. Let's work together to make progress and keep moving forward!"
+    }
+  ]
+}

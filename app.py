@@ -21,7 +21,7 @@ class AssistantManager:
         # profile builder assistants variables
         self.profile_builder_assistant_id = "asst_mmvSEv260sF7lnHwia2bpHtJ"
         self.thread_summarizer_assistant_id = "asst_et4eUKFzOFGGbQZcZ3NtiVcf"
-        self.blank_profile_path = "blank_profile.json"
+        self.blank_profile_path = "users/blank_profile.json"
         self.user_profile = None
 
         # other assistant variables
@@ -290,7 +290,6 @@ def main():
             st.session_state.messages.append({"role": "assistant", "content": response})
 
         if st.button("Save Chat Log"):
-            print(manager.chat_log)
             if manager.chat_log:  # Only save if there's chat content
                 thread_date = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                 manager.save_chat_log(user_name, thread_date)
