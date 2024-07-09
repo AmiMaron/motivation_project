@@ -1,0 +1,19 @@
+{
+  "user_name": "ami",
+  "personal_info": {
+    "full name": "Ami Maron",
+    "date_of_birth": "05051999",
+    "gender": "male",
+    "email": "ami@ami",
+    "phone": "234",
+    "profession": "student",
+    "address": {
+      "city": "jer",
+      "country": "isra"
+    }
+  },
+  "status": {
+    "summary": "Personal information collected",
+    "last_updated": "2024-07-09T13:07:50.149271"
+  }
+}
