@@ -235,7 +235,7 @@ class AssistantManager:
     def save_chat_log(self, user_name, thread_date):
         log_data = {
             "thread_name": f"{user_name}_{thread_date.replace(' ', '_')}",
-            "thread_id": self.chat_thread.id,
+            "thread_id": self.chat_thread.id if self.chat_thread else None,
             "assistant_id": self.main_assistant_id,
             "thread_date": thread_date,
             "chat": self.chat_log
@@ -290,8 +290,11 @@ def main():
             st.session_state.messages.append({"role": "assistant", "content": response})
 
         if st.button("Save Chat Log"):
-            thread_date = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-            manager.save_chat_log(user_name, thread_date)
-
+            if manager.chat_log:  # Only save if there's chat content
+                thread_date = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                manager.save_chat_log(user_name, thread_date)
+            else:
+                st.warning("No chat to save. Please have a conversation first.")
+                
 if __name__ == "__main__":
     main()
