@@ -290,11 +290,12 @@ def main():
             st.session_state.messages.append({"role": "assistant", "content": response})
 
         if st.button("Save Chat Log"):
+            print(manager.chat_log)
             if manager.chat_log:  # Only save if there's chat content
                 thread_date = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                 manager.save_chat_log(user_name, thread_date)
             else:
                 st.warning("No chat to save. Please have a conversation first.")
-                
+
 if __name__ == "__main__":
     main()
