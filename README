@@ -1,0 +1,78 @@
+# MotivateBot
+
+MotivateBot is an AI-powered motivational assistant that provides personalized support and encouragement to users through natural language conversations.
+
+## Features
+
+- User profile creation and management
+- Adaptive motivation strategies
+- Persistent conversation logging
+- Multi-agent AI architecture
+
+## Prerequisites
+
+- Python 3.7+
+- OpenAI API key
+
+## Installation
+
+1. Clone the repository:
+   ```
+   git clone https://github.com/AmiMaron/motivation_project.git
+   cd motivatebot
+   ```
+
+2. Install required packages:
+   ```
+   pip install -r requirements.txt
+   ```
+
+3. Set up environment variables:
+   Create a `.env` file in the project root and add your OpenAI API key:
+   ```
+   OPENAI_API_KEY=your_api_key_here
+   ```
+
+## Usage
+
+Run the main script:
+```
+python main.py
+```
+
+Follow the prompts to create a user profile or log in with an existing one. Then, start chatting with MotivateBot!
+
+## Project Structure
+
+- `main.py`: Entry point of the application
+- `users/`: Directory for storing user profiles
+- `users/logs/`: Directory for storing conversation logs
+
+## Configuration
+
+Adjust all API keys and IDs to your own.
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- OpenAI for providing the GPT models and API
+- The open-source community for inspiration and tools
+
+## Future Improvements
+
+- Enhance user modeling with sentiment analysis and external data integration
+- Expand motivation strategies and implement strategy effectiveness tracking
+- Develop mobile and web applications for easier access
+- Implement voice interface for hands-free interaction
+- Strengthen privacy and security measures
+
+## Contact
+
+For any queries or suggestions, please open an issue on this repository.
