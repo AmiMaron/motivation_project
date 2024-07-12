@@ -12,11 +12,11 @@ class AssistantManager:
         # Initialize OpenAI client and assistant IDs
         self.client = openai.Client()
         self.api_key = os.getenv('OPENAI_API_KEY')  # environment variable
-        self.main_assistant_id = "asst_VxB5X5MnbE1udKNdgOI2HzbQ"
+        self.main_assistant_id = os.getenv('MAIN_ASSISTANT_ID') # environment variable
         
         # prfile builder assistants variables
-        self.profile_builder_assistant_id = "asst_mmvSEv260sF7lnHwia2bpHtJ"
-        self.thread_summarizer_assistant_id = "asst_et4eUKFzOFGGbQZcZ3NtiVcf"
+        self.profile_builder_assistant_id = os.getenv('PROFILE_BUILDING_ASSISTANT_ID') # environment variable
+        self.thread_summarizer_assistant_id = os.getenv('THREAD_SUMMARIZATION_ASSISTANT_ID') # environment variable
         self.blank_profile_path = "users/blank_profile.json"
         self.user_profile = None
 
